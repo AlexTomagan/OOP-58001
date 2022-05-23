@@ -1,54 +1,21 @@
 from tkinter import *
 
-window = Tk()
+window= Tk()
 window.geometry("400x300+20+10")
-window.title("The Grid Manager")
-ent1 = Entry(window, bd=3,fg="red",justify="center")
-ent1.grid(row=0,column=0)
-ent1.insert(0,"row 0,column 0")
-
-ent2 = Entry(window,bd=3,fg="blue",justify="center")
-ent2.grid(row=0, column = 1)
-ent2.insert(0,"row 0, column 1")
-
-ent3 = Entry(window,bd=3,fg="yellow",justify="center")
-ent3.grid(row=0, column = 2)
-ent3.insert(0,"row 0, column 2")
-
-ent4 = Entry(window,bd=3,fg="red",justify="center")
-ent4.grid(row=1, column = 0)
-ent4.insert(0,"row 1, column 0")
-
-ent5 = Entry(window,bd=3,fg="blue",justify="center")
-ent5.grid(row=1, column = 1)
-ent5.insert(0,"row 1, column 1")
-
-ent6 = Entry(window,bd=3,fg="yellow",justify="center")
-ent6.grid(row=1, column = 2)
-ent6.insert(0,"row 1, column 2")
-
-ent7 = Entry(window,bd=3,fg="red",justify="center")
-ent7.grid(row=2, column = 0)
-ent7.insert(0,"row 2, column 0")
-
-ent8 = Entry(window,bd=3,fg="blue",justify="center")
-ent8.grid(row=2, column = 1)
-ent8.insert(0,"row 2, column 1")
-
-ent9 = Entry(window,bd=3,fg="yellow",justify="center")
-ent9.grid(row=2, column = 2)
-ent9.insert(0,"row 2, column 2")
-
-yscroll = Scrollbar(window,orient=VERTICAL)
-yscroll.grid(row = 5,column = 2,rowspan=4,padx=(0,100),pady=5)
-
-datalist = "Student1", "Student2", "Student3", "Student4", "Student5", "Student6","Student7", "Student8", "Student9", "Student10"
-var = StringVar()
-
-lb = Listbox(window,listvariable=var,width=10, height=4,yscrollcommand=yscroll.set)
-lb.grid(row=5,column=1, rowspan=4,padx=(100,0),pady=5)
-var.set(tuple(datalist))
-yscroll["command"] = lb.yview()
-
-
+window.title("Tomagan Final Exam")
+class MyWindow:
+    def __init__(self,window):
+        self.lbl1 = Label(window,text="Input 1st Number:")
+        self.lbl1.place(x=50,y=80)
+        self.txtfld1 = Entry(window,bd=3)
+        self.txtfld1.place(x=180,y=80)
+        self.lbl2=Label(window,text="Input 2nd Number:")
+        self.lbl2.place(x=50,y=120)
+        self.txtfld2 = Entry(window,bd=3)
+        self.txtfld2.place(x=180,y=120)
+        self.lbl3 = Label(window, text="Input 3rd Number:")
+        self.lbl3.place(x=50, y=140)
+        self.txtfld3 = Entry(window, bd=3)
+        self.txtfld3.place(x=180, y=140)
+mywin=MyWindow(window)
 window.mainloop()
